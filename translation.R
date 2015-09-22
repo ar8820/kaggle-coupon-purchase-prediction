@@ -4,7 +4,10 @@
 #################################################################################
 
 # Setting the working directory
-setwd("~/Documents/R/kaggle-coupon-purchase-prediction")
+if (!exists(x = "path")) {
+  path <- paste0(getwd(),"/kaggle-coupon-purchase-prediction")
+}
+setwd(path)
 
 # Create master translation table from Japanese to English
 coupon_list_train = read.csv("Data/coupon_list_train.csv", as.is=T) # Source file the English list is keyed by
